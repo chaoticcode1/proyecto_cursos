@@ -1,0 +1,84 @@
+/* Estilos base fijos */
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    min-width: 1200px; /* Ancho mínimo fijo */
+    overflow-x: auto; /* Scroll horizontal si es necesario */
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    transition: all 0.3s;
+    padding-top: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 14px; /* Tamaño fijo */
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 950px; /* 1200px - 250px */
+    min-width: 950px;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    left: 260px;
+    cursor: pointer;
+    background-color: #343a40;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px; /* Tamaño fijo */
+    z-index: 1000;
+}
+
+.toggle-btn:hover {
+    background-color: #495057;
+}
+
+.sidebar.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sidebar.collapsed + .content {
+    margin-left: 0;
+    width: 1200px;
+}
+
+/* Cards con tamaño fijo */
+.card {
+    width: 300px;
+    margin: 15px;
+    display: inline-block;
+}
+
+.card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
